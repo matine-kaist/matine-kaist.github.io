@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+  {% if page.title %}
+    {{ page.title }} | {{ site.title }}
+  {% else %}
+    {{ site.title }}
+  {% endif %}
+</title>
+
+<meta name="description" content="{{ page.description | default: site.description }}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@fontsource/cal-sans@5/index.css" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+{% if site.logo %}
+  <link rel="icon" id="favicon" href="{{ site.logo | replace: '.png', '.svg' | relative_url }}" type="image/svg+xml">
+{% endif %}
+
+<!-- Prevent flash of wrong theme by reading localStorage before first paint -->
+<script>
+  (function () {
+    var t = localStorage.getItem("lab-site-theme");
+    if (t === "dark" || t === "light") {
+      document.documentElement.setAttribute("data-theme", t);
+    }
+  })();
+</script>

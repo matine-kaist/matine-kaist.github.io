@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <header class="site-header">
+      {% include nav.html %}
+    </header>
+
+    <main class="site-main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      {% include footer.html %}
+    </footer>
+
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+    <script>
+      document.querySelectorAll('.site-main table').forEach(function (t) {
+        if (t.closest('.table-scroll')) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'table-scroll';
+        t.parentNode.insertBefore(wrap, t);
+        wrap.appendChild(t);
+      });
+    </script>
+  </body>
+</html>

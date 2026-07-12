@@ -1,0 +1,20 @@
+<div class="member-card">
+  <a href="{{ include.member.url | relative_url }}" class="member-card-link">
+    {% if include.member.image %}
+      <img class="member-card-photo"
+           src="{{ include.member.image | relative_url }}"
+           alt="{{ include.member.name }}"
+           onerror="swapToDefaultPhoto(this)">
+    {% else %}
+      <div class="member-card-photo member-photo--default"
+           role="img"
+           aria-label="{{ include.member.name }}"></div>
+    {% endif %}
+    <div class="member-card-info">
+      <span class="member-card-name">{{ include.member.name }}</span>
+      {% if include.member.position %}
+        <span class="member-card-position">{{ include.member.position }}</span>
+      {% endif %}
+    </div>
+  </a>
+</div>

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<article class="member-profile">
+  <header class="member-header">
+    {% if page.image %}
+      <img class="member-photo"
+           src="{{ page.image | relative_url }}"
+           alt="{{ page.name }}"
+           onerror="swapToDefaultPhoto(this)">
+    {% else %}
+      <div class="member-photo member-photo--default"
+           role="img"
+           aria-label="{{ page.name }}"></div>
+    {% endif %}
+
+    <div class="member-header-text">
+      <h1 class="member-name">{{ page.name }}</h1>
+      {% if page.position %}
+        <p class="member-role">{{ page.position }}</p>
+      {% endif %}
+      {% if page.affiliation %}
+        <p class="member-affiliation">{{ page.affiliation }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <section class="member-meta">
+    {% if page.email %}
+      <p>📩 <strong>Email:&nbsp;</strong>
+        <a href="mailto:{{ page.email }}">{{ page.email }}</a>
+      </p>
+    {% endif %}
+    {% if page.office %}
+      <p>📍 <strong>Office:&nbsp;</strong>
+        {{ page.office }}
+      </p>
+    {% endif %}
+    {% if page.website %}
+      <p>🔗 <strong>Website:&nbsp;</strong>
+        <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer">{{ page.website }}</a>
+      </p>
+    {% endif %}
+    {% if page.links %}
+      <ul class="member-links">
+        {% for link in page.links %}
+          <li>
+            <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+
+  {% if content != "" %}
+    <section class="member-bio">
+      <h2>Biography</h2>
+      {{ content }}
+    </section>
+  {% endif %}
+</article>

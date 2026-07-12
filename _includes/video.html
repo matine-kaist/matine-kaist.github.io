@@ -1,0 +1,21 @@
+<div class="video-wrapper">
+  {% if include.url %}
+  <a href="{{ include.url }}" title="{{ include.title }}" target="_blank">
+  {% endif %}
+
+  {% if include.width %}
+  <video controls style="width: {{ include.width }}">
+  {% else %}
+  <video controls>
+  {% endif %}
+  <source src="{{ include.src }}" type="video/mp4"/>
+  </video>
+
+  {% if include.url %}
+  </a>
+  {% endif %}
+  {% if include.caption %}
+  <p class="video-caption">{{ include.caption }}</p>
+  {% endif %}
+
+</div>

@@ -1,0 +1,97 @@
+title: "MATINE Lab"
+description: "Musical Acoustics and Transducer Instrument Engineering Laboratory"
+description_ko: "악기 음향 및 트랜스듀서 연구실"
+baseurl: ""
+url: "https://matine-kaist.github.io"
+future: true
+
+logo: /assets/img/lab-logo.png
+
+email: "`matine.kaist•gmail•com`"
+
+lab_address:
+  line1: "#3107, N28 (Energy & Environmental Research Center, KAIST)"
+  line2: "291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea (34141)"
+  ko_line1: "대전광역시 유성구 대학로 291 (구성동, 한국과학기술원)"
+  ko_line2: "N28 3107호"
+
+theme: null
+
+exclude:
+  - archive/
+  - preview.sh
+  - scripts/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+
+collections:
+  members:
+    output: true
+    permalink: /members/:name/
+  research:
+    output: true
+  joining_us:
+    output: true
+  news:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "members"
+    values:
+      layout: member
+
+nav_items:
+  - title: "About"
+    url: /about/
+  - title: "Research"
+    url: /research/
+    children:
+      - title: "Publications"
+        url: /research/publications/
+      - title: "Collaborations"
+        url: /research/collaborations/
+      - title: "Related Links"
+        url: /research/related-links/
+  - title: "Team"
+    url: /members/
+  - title: "News"
+    url: /news/
+  - title: "Joining Us"
+    url: /joining-us/
+  - title: "Contact"
+    url: /contact/
+
+plugins:
+  - jekyll-scholar
+
+# Publications shown under "Featured Research" on the home page, in display order.
+featured_research:
+  - lee2026challengea
+  - lee2026numerical
+  - lee2024differentiable
+
+highlighted_venues:
+  - NeurIPS
+  - ICLR
+  - ICML
+  - AAAI
+  - ICASSP
+  - Interspeech
+  - ISMIR
+  - JASA
+  - JAES
+  - SIGGRAPH
+  - SIGGRAPH ASIA
+
+scholar:
+  style: ieee
+  locale: en
+  source: _bibliography
+  bibliography: publication.bib
+  bibliography_template: bib_entry
+  sort_by: year,month
+  order: descending

@@ -1,0 +1,73 @@
+<li class="pub-item">
+  <div class="pub-authors">
+    {% assign clean_note = reference.note | remove: "{" | remove: "}" | strip %}
+    {% if clean_note != "" %}
+      {% assign note_parts = clean_note | split: ", " %}
+      {% assign venue_name = note_parts[0] | strip %}
+      {% assign note_tag = note_parts[1] | strip %}
+      {% assign is_highlighted = false %}
+      {% for hv in site.highlighted_venues %}
+        {% if hv == venue_name %}{% assign is_highlighted = true %}{% break %}{% endif %}
+      {% endfor %}
+      {% if is_highlighted %}<span class="pub-note pub-note--hl">{{ venue_name }}</span>{% else %}<span class="pub-note">{{ venue_name }}</span>{% endif %}{% if note_tag == "Oral" %}<span class="pub-presentation">[Oral]</span>{% elsif note_tag == "Spotlight" %}<span class="pub-presentation">[Spotlight]</span>{% endif %}
+    {% endif %}
+    {% assign raw_authors = reference.author | split: " and " %}
+    {% for raw_author in raw_authors %}
+      {% assign a = raw_author | strip %}
+      {% comment %}Normalize BibTeX "Last, First" → "First Last"{% endcomment %}
+      {% assign parts = a | split: ", " %}
+      {% if parts.size == 2 %}
+        {% assign normalized = parts[1] | strip | append: " " | append: parts[0] | strip %}
+      {% else %}
+        {% assign normalized = a %}
+      {% endif %}
+
+      {% comment %}Try exact name match first, then aliases{% endcomment %}
+      {% assign matched = site.members | where: "name", normalized | first %}
+      {% unless matched %}
+        {% for m in site.members %}
+          {% if m.aliases contains normalized or m.aliases contains a %}
+            {% assign matched = m %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      {% endunless %}
+
+      {% if matched %}
+        <a class="pub-author-link" href="{{ matched.url | relative_url }}">{{ normalized }}</a>
+      {% else %}
+        {{ normalized }}
+      {% endif %}
+      {% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+  </div>
+
+  <div class="pub-title">{{ reference.title }}.</div>
+
+  <div class="pub-venue-line">
+    {% if reference.journal %}
+      <span class="pub-venue"><em>{{ reference.journal }}</em></span>
+    {% elsif reference.booktitle %}
+      <span class="pub-venue"><em>{{ reference.booktitle }}</em></span>
+    {% endif %}
+    {% if reference.volume %}
+      <span class="pub-volume">{{ reference.volume }}</span>
+    {% endif %}
+    {% if reference.number %}
+      <span class="pub-number">({{ reference.number }})</span>
+    {% endif %}
+    {% if reference.pages %}
+      <span class="pub-pages">: {{ reference.pages }}</span>
+    {% endif %}
+    <span class="pub-year">({{ reference.year }})</span>
+    {% if reference.doi %}
+      <span class="pub-links">
+        <a href="https://doi.org/{{ reference.doi }}">DOI</a>
+      </span>
+    {% elsif reference.url %}
+      <span class="pub-links">
+        <a href="{{ reference.url }}">Link</a>
+      </span>
+    {% endif %}
+  </div>
+</li>

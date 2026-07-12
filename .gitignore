@@ -1,0 +1,12 @@
+*.swp
+**/.DS_Store
+
+archive/
+.claude/
+CLAUDE.md
+
+_site/
+.jekyll-cache/
+vendor/
+.bundle/
+

@@ -1,0 +1,39 @@
+<div class="footer-banner">
+  <div class="footer-lab-info">
+    <img src="{{ '/assets/img/lab-matine.png' | relative_url }}" alt="{{ site.title }}" class="footer-lab-wordmark">
+    <br>
+    <div class="footer-lab-name">{{ site.title }}</div>
+    {% if site.description %}
+      <div class="footer-lab-description">
+          {{ site.description }}
+          {% if site.description_ko %}
+            <br>{{ site.description_ko }}
+          {% endif %}
+      </div>
+    {% endif %}
+    <div class="footer-lab-address">
+      {% if site.lab_address %}
+        {{ site.lab_address.line1 }}<br>
+        {{ site.lab_address.line2 }}
+        {% if site.lab_address.line3 %}
+          <br>{{ site.lab_address.line3 }}
+        {% endif %}
+        {% if site.lab_address.ko_line1 %}
+          <br><br>{{ site.lab_address.ko_line1 }}
+          {% if site.lab_address.ko_line2 %}
+            <br>{{ site.lab_address.ko_line2 }}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="footer-logos">
+    <a href="https://www.kaist.ac.kr" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/assets/img/kaist_logo_trans.png' | relative_url }}" alt="KAIST" class="footer-logo">
+    </a>
+    <a href="https://ct.kaist.ac.kr" target="_blank" rel="noopener noreferrer">
+      <img src="{{ '/assets/img/ct_e.png' | relative_url }}" alt="Culture Technology" class="footer-logo">
+    </a>
+  </div>
+</div>

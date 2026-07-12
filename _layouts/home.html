@@ -1,0 +1,46 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <header class="site-header">
+      {% include nav.html %}
+    </header>
+
+    <div class="hero">
+      <div class="hero-cover"></div>
+      <div class="hero-content">
+        <img class="hero-wordmark"
+             src="{{ '/assets/img/lab-matine-full.png' | relative_url }}"
+             alt="{{ site.title }}">
+        <div class="hero-buttons">
+          <a href="{{ '/about/' | relative_url }}" class="btn-hero-primary">Learn More About the Lab</a>
+          <a href="{{ '/research/' | relative_url }}" class="btn-hero-secondary">Research Overview</a>
+        </div>
+      </div>
+    </div>
+
+    <main class="site-main">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      {% include footer.html %}
+    </footer>
+
+    <script src="{{ '/assets/js/theme.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/navigation.js' | relative_url }}"></script>
+    <script>
+      document.querySelectorAll('.site-main table').forEach(function (t) {
+        if (t.closest('.table-scroll')) return;
+        var wrap = document.createElement('div');
+        wrap.className = 'table-scroll';
+        t.parentNode.insertBefore(wrap, t);
+        wrap.appendChild(t);
+      });
+    </script>
+  </body>
+</html>
