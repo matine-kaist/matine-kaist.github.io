@@ -73,8 +73,12 @@ New collaborations are always welcome. Connect with us to explore opportunities 
   <div>
     <h4 style="margin-top: 0; margin-bottom: 0.5rem; font-size: 1.1rem;">Get In Touch</h4>
     <ul style="list-style: none; padding-left: 0; margin-top: 0; line-height: 1.7; color: var(--color-muted);">
-      <li style="margin-bottom: 0.25rem;"><strong style="color: var(--color-text);">📩 Lab Director:</strong> Prof. Jin Woo Lee (<code><a href="https://jin-woo-lee.github.io">jin-woo-lee.github.io</a></code>)</li>
-      <li><strong style="color: var(--color-text);">📍 Lab Location:</strong>
+      <li style="margin-bottom: 0.25rem;"><strong style="color: var(--color-text);">📩 Director:</strong>
+        <ul style="list-style: none; padding-left: 1; margin-top: 0; line-height: 1.7; color: var(--color-muted);">
+           <li>Jin Woo Lee (<code><a href="https://jin-woo-lee.github.io">jin-woo-lee.github.io</a></code>)</li>
+        </ul>
+      </li>
+      <li><strong style="color: var(--color-text);">📍 Location:</strong>
         <ul style="list-style: none; padding-left: 1; margin-top: 0; line-height: 1.7; color: var(--color-muted);">
             <li>{{ site.lab_address.line1 }}</li>
             <li>{{ site.lab_address.line2 }}</li>

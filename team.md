@@ -57,10 +57,19 @@ permalink: /members/
 {% if visitors.size > 0 %}
 ## Visiting Students / Interns
 
+<div class="member-grid">
+  {% for person in visitors %}
+    {% include member-card.html member=person %}
+  {% endfor %}
+</div>
+
+<!--
 | Name | Role | Period | Affiliation |
 |------|------|--------|-------------|
 {% for person in visitors %}| [{{ person.name }}]({{ person.url | relative_url }}) | {% if person.role == "visiting" %}Visiting Student{% elsif person.role == "intern" %}Intern{% else %}{{ person.role }}{% endif %} | {{ person.date_join }}–{{ person.date_exit }} | {{ person.affiliation }} |
 {% endfor %}
+-->
+
 {% endif %}
 
 

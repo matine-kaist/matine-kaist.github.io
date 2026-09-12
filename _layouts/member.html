@@ -5,9 +5,16 @@ layout: default
 <article class="member-profile">
   <header class="member-header">
     {% if page.image %}
+      {% assign trans_x = 0 %}
+      {% assign trans_y = 0 %}
+      {% if page.image_trans %}
+        {% assign trans_x = page.image_trans[0] | times: 100 %}
+        {% assign trans_y = page.image_trans[1] | times: 100 %}
+      {% endif %}
       <img class="member-photo"
            src="{{ page.image | relative_url }}"
            alt="{{ page.name }}"
+           style="object-position: calc(50% + {{ trans_x }}%) calc(50% + {{ trans_y }}%);"
            onerror="swapToDefaultPhoto(this)">
     {% else %}
       <div class="member-photo member-photo--default"
@@ -35,6 +42,11 @@ layout: default
     {% if page.office %}
       <p>📍 <strong>Office:&nbsp;</strong>
         {{ page.office }}
+      </p>
+    {% endif %}
+    {% if page.tel %}
+      <p>📞 <strong>Tel.:&nbsp;</strong>
+        {{ page.tel }}
       </p>
     {% endif %}
     {% if page.website %}

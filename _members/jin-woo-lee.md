@@ -5,6 +5,7 @@ role: pi
 position: Assistant Professor
 affiliation: Graduate School of Culture Technology, KAIST
 office: N25 &num; 3232
+tel: 2922
 website: https://jin-woo-lee.github.io
 date_join: 2026-08
 date_exit: present
@@ -28,7 +29,6 @@ links:
 
 ---
 
-Jin Woo Lee is an Assistant Professor of Graduate School of Culture Technology at KAIST.
-Prior to that, he was a Postdoctoral Associate at the Research Laboratory of Electronics ([RLE](http://rle.mit.edu/)) at Massachusetts Institute of Technology (MIT) and a member of Laboratory for Audio, Music, and Acoustics (LAMA) at MIT [Music Technology](https://musictech.mit.edu/).
-Jin completed Ph.D. in Intelligence and Information from Seoul National University (SNU), following his B.Sc. in Mechanical Engineering from Pohang University of Science and Technology (POSTECH).
+
+Jin Woo Lee is an assistant professor at the Graduate School of Culture Technology (GSCT) of KAIST, where he focuses on developing machines that bridge the physical and digital worlds to enrich musical creativity. He has been working on music technology, physics-based computer simulation, and acoustic transducer design, at KAIST Musical Acoustics and Transducer Instrument Engineering Laboratory. Prior to the current position, he was a postdoctoral associate at the Research Laboratory of Electronics ([RLE](http://rle.mit.edu/)) of MIT and a member of Laboratory for Audio, Music, and Acoustics at MIT [Music Technology](https://musictech.mit.edu/). He received Ph.D. in Intelligence and Information from Seoul National University (SNU) in 2024, following his B.Sc. in Mechanical Engineering from Pohang University of Science and Technology (POSTECH) in 2019. As an engineer, he has actively collaborated with artists across various fields, including museum curators, instrument makers, and musicians.
 

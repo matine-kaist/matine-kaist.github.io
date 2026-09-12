@@ -1,9 +1,16 @@
 <div class="member-card">
   <a href="{{ include.member.url | relative_url }}" class="member-card-link">
     {% if include.member.image %}
+      {% assign trans_x = 0 %}
+      {% assign trans_y = 0 %}
+      {% if include.member.image_trans %}
+        {% assign trans_x = include.member.image_trans[0] | times: 100 %}
+        {% assign trans_y = include.member.image_trans[1] | times: 100 %}
+      {% endif %}
       <img class="member-card-photo"
            src="{{ include.member.image | relative_url }}"
            alt="{{ include.member.name }}"
+           style="object-position: calc(50% + {{ trans_x }}%) calc(50% + {{ trans_y }}%);"
            onerror="swapToDefaultPhoto(this)">
     {% else %}
       <div class="member-card-photo member-photo--default"

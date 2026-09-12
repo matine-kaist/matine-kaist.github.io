@@ -7,13 +7,13 @@ future: true
 
 logo: /assets/img/lab-logo.png
 
-email: "`matine.kaist•gmail•com`"
+email: "`matine.kaist •at• gmail •dot• com`"
 
 lab_address:
-  line1: "#3107, N28 (Energy & Environmental Research Center, KAIST)"
+  line1: "#3232, N25 (KAIST)"
   line2: "291 Daehak-ro, Yuseong-gu, Daejeon, Republic of Korea (34141)"
   ko_line1: "대전광역시 유성구 대학로 291 (구성동, 한국과학기술원)"
-  ko_line2: "N28 3107호"
+  ko_line2: "N25 3232호"
 
 theme: null
 
