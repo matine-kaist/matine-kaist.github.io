@@ -50,6 +50,8 @@ nav_items:
   - title: "Research"
     url: /research/
     children:
+      - title: "Overview"
+        url: /research/
       - title: "Publications"
         url: /research/publications/
       - title: "Collaborations"

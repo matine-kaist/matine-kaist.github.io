@@ -35,6 +35,20 @@ function swapToDefaultNewsImage(img) {
     });
   }
 
+  // Dropdown open/close is purely hover-driven (CSS :hover / :focus-within).
+  // Clicking the dropdown parent itself does nothing (no navigation).
+  var mobileQuery = window.matchMedia("(max-width: 768px)");
+
+  document.querySelectorAll(".nav-item.has-dropdown").forEach(function (item) {
+    var parentLink = item.querySelector(":scope > .nav-link");
+    if (!parentLink) return;
+
+    parentLink.addEventListener("click", function (e) {
+      if (mobileQuery.matches) return; // dropdown is already expanded inline on mobile
+      e.preventDefault();
+    });
+  });
+
   // Wordmark → icon crossfade on scroll
   var header = document.querySelector(".site-header");
   var THRESHOLD = 72; // px scrolled before switching to icon
