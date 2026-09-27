@@ -1,7 +1,7 @@
 ---
 layout: job
 title: "Master's Program Students"
-season: Fall 2026
+season: Spring 2027
 status: "2 funded openings (국비장학생)"
 permalink: /joining-us/masters/
 ---

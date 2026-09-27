@@ -1,0 +1,46 @@
+{% comment %}Highwire Press tags for Google Scholar; rendered on per-publication pages only.{% endcomment %}
+{% assign e = page.entry %}
+<meta name="citation_title" content="{{ e.title | strip_html | escape }}">
+{% assign raw_authors = e.author | split: " and " %}
+{% for raw_author in raw_authors %}
+  {% assign a = raw_author | strip %}
+  {% assign parts = a | split: ", " %}
+  {% if parts.size == 2 %}
+    {% assign name = parts[0] | strip | append: ", " | append: parts[1] | strip %}
+  {% else %}
+    {% assign words = a | split: " " %}
+    {% assign last = words | last %}
+    {% assign first = a | remove_first: last | strip %}
+    {% assign name = last | append: ", " | append: first %}
+  {% endif %}
+<meta name="citation_author" content="{{ name | escape }}">
+{% endfor %}
+{% if e.month %}
+  {% capture dstr %}1 {{ e.month }} {{ e.year }}{% endcapture %}
+  {% assign pubdate = dstr | date: "%Y/%m/%d" %}
+{% endif %}
+<meta name="citation_publication_date" content="{{ pubdate | default: e.year }}">
+{% if e.journal %}
+<meta name="citation_journal_title" content="{{ e.journal | escape }}">
+{% elsif e.booktitle %}
+<meta name="citation_conference_title" content="{{ e.booktitle | escape }}">
+{% endif %}
+{% if e.volume %}<meta name="citation_volume" content="{{ e.volume }}">{% endif %}
+{% if e.number %}<meta name="citation_issue" content="{{ e.number }}">{% endif %}
+{% if e.pages %}
+  {% assign pg = e.pages | replace: "--", "-" | replace: "–", "-" | split: "-" %}
+<meta name="citation_firstpage" content="{{ pg[0] | strip }}">
+  {% if pg.size > 1 %}<meta name="citation_lastpage" content="{{ pg[1] | strip }}">{% endif %}
+{% endif %}
+{% if e.doi %}<meta name="citation_doi" content="{{ e.doi }}">{% endif %}
+{% if e.issn %}<meta name="citation_issn" content="{{ e.issn }}">{% endif %}
+{% if e.publisher %}<meta name="citation_publisher" content="{{ e.publisher | escape }}">{% endif %}
+{% if e.url %}
+  {% if e.url contains "arxiv.org/abs/" %}
+<meta name="citation_arxiv_id" content="{{ e.url | split: '/abs/' | last }}">
+<meta name="citation_pdf_url" content="{{ e.url | replace: '/abs/', '/pdf/' }}">
+  {% elsif e.url contains ".pdf" %}
+<meta name="citation_pdf_url" content="{{ e.url }}">
+  {% endif %}
+{% endif %}
+<meta name="citation_abstract_html_url" content="{{ page.url | absolute_url }}">

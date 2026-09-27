@@ -1,0 +1,12 @@
+---
+layout: default
+---
+{% assign entry = page.entry %}
+<header class="page-header">
+  <h1>Paper Details</h1>
+</header>
+
+<div class="pub-detail">
+  {% include pub-entry.html show_details=false %}
+  <p><a href="{{ '/research/publications/' | relative_url }}">&larr; All publications</a></p>
+</div>

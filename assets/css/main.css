@@ -861,6 +861,13 @@ tbody tr:hover td {
   margin-bottom: 0.2rem;
 }
 
+.pub-title-link,
+.pub-title-link:hover {
+  color: inherit;
+  text-decoration: none;
+  cursor: text;
+}
+
 .pub-venue-line {
   color: var(--color-muted);
 }
@@ -908,12 +915,22 @@ tbody tr:hover td {
 }
 
 .pub-presentation {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
   font-size: 0.72rem;
   font-weight: 700;
-  color: #c0392b;
+  color: #fde9c0;
+  background: #4a2c00;
+  padding: 0.1rem 0.45rem;
+  border-radius: 0.25rem;
   margin-right: 0.25rem;
   vertical-align: middle;
+}
+
+.pub-presentation-icon {
+  font-size: calc(0.72rem + 3pt);
+  line-height: 1;
 }
 
 /* Featured Research renders one {% bibliography %} call per configured key

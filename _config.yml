@@ -97,3 +97,6 @@ scholar:
   bibliography_template: bib_entry
   sort_by: year,month
   order: descending
+  details_dir: research/publications
+  details_permalink: /:details_dir/:key/
+  details_link: false

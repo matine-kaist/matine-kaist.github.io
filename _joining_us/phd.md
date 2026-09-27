@@ -1,7 +1,7 @@
 ---
 layout: job
 title: "Ph.D. Program Students"
-season: Fall 2026
+season: Spring 2027
 status: "1 funded opening (국비장학생)"
 permalink: /joining-us/phd/
 ---

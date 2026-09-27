@@ -1,7 +1,7 @@
 ---
 layout: job
 title: "Interns (Undergraduate/Graduate)"
-season: Fall 2026
+season: Always
 status: "Open"
 permalink: /joining-us/intern/
 ---

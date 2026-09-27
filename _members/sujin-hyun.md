@@ -9,6 +9,6 @@ date_join: 2026-09
 
 ---
 
-SuJin Hyun studied Euphonium Performance at Korea National University of Arts and is currently a research intern at the IBD Lab, KAIST. With a background in music, she is interested in the intersection of music and technology, particularly physical sound, music technology, and human-computer interaction (HCI).
+Sujin Hyun studied Euphonium Performance at Korea National University of Arts and is currently a research intern at the IBD Lab, KAIST. With a background in music, she is interested in the intersection of music and technology, particularly physical sound, music technology, and human-computer interaction (HCI).
 
 
