@@ -36,6 +36,9 @@ collections:
     output: true
   news:
     output: true
+  demo:
+    output: true
+    permalink: /demo/:name/
 
 defaults:
   - scope:
@@ -43,6 +46,11 @@ defaults:
       type: "members"
     values:
       layout: member
+  - scope:
+      path: ""
+      type: "demo"
+    values:
+      layout: news
 
 nav_items:
   - title: "About"
@@ -54,6 +62,8 @@ nav_items:
         url: /research/
       - title: "Publications"
         url: /research/publications/
+      - title: "Demo"
+        url: /demo/
       - title: "Collaborations"
         url: /research/collaborations/
       - title: "Related Links"
@@ -72,9 +82,9 @@ plugins:
 
 # Publications shown under "Featured Research" on the home page, in display order.
 featured_research:
+  - chen2026reconstructing
   - lee2026challengea
   - lee2026numerical
-  - lee2024differentiable
 
 highlighted_venues:
   - NeurIPS

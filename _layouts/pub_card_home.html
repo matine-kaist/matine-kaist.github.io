@@ -7,15 +7,21 @@
     {% if clean_note != "" %}
       {% assign note_parts = clean_note | split: ", " %}
       {% assign venue_name = note_parts[0] | strip %}
+      {% assign note_tag = note_parts[1] | strip %}
       {% assign is_highlighted = false %}
       {% for hv in site.highlighted_venues %}
         {% if hv == venue_name %}{% assign is_highlighted = true %}{% break %}{% endif %}
       {% endfor %}
+      <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.35rem;">
       {% if is_highlighted %}
         <span class="pub-note pub-note--hl" style="margin-right: 0; white-space: nowrap;">{{ venue_name }}</span>
       {% else %}
         <span class="pub-note" style="margin-right: 0; white-space: nowrap;">{{ venue_name }}</span>
       {% endif %}
+      {% if note_tag == "Oral" or note_tag == "Spotlight" %}
+        <span class="pub-presentation" style="margin-right: 0; white-space: nowrap;">{{ note_tag }}&nbsp;<span class="pub-presentation-icon">✨</span></span>
+      {% endif %}
+      </div>
     {% endif %}
   </div>
   <span class="pub-authors" style="color: var(--color-muted); font-size: 0.95rem; display: block; margin-bottom: 1rem;">

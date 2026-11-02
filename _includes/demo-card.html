@@ -1,0 +1,21 @@
+{% assign demo = include.demo %}
+{% assign demo_image = demo.image | default: demo.photo %}
+<div class="news-card" style="{{ include.style }}border: 1px solid var(--color-border); border-radius: 0.75rem; overflow: hidden; display: flex; flex-direction: column; background-color: var(--color-card-bg); transition: transform 0.2s, box-shadow 0.2s;">
+  <div class="news-card-image" style="height: 180px; width: 100%; border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; overflow: hidden; background-color: var(--color-bg);">
+    {% if demo_image %}
+      <img src="{{ demo_image | relative_url }}" alt="{{ demo.title }}" style="width: 100%; height: 100%; object-fit: cover;" onerror="swapToDefaultNewsImage(this)">
+    {% else %}
+      <div class="news-card-image-default" role="img" aria-label="MATINE Lab Logo"></div>
+    {% endif %}
+  </div>
+  <div class="news-card-content" style="padding: 1.25rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+      <span class="news-card-date" style="font-size: 0.85rem; color: var(--color-muted);">{{ demo.date | date: "%Y.%m" }}</span>
+      <h3 style="margin: 0.4rem 0 0.75rem 0; font-size: 1.15rem; line-height: 1.4;"><a href="{{ demo.url | relative_url }}" style="text-decoration: none; color: inherit;">{{ demo.title }}</a></h3>
+      <p style="font-size: 0.9rem; color: var(--color-muted); line-height: 1.6; margin: 0;">{{ demo.excerpt | strip_html | truncatewords: 20 }}</p>
+    </div>
+    <div style="margin-top: 1.25rem;">
+      <a href="{{ demo.url | relative_url }}" class="btn-learn-more">View demo</a>
+    </div>
+  </div>
+</div>

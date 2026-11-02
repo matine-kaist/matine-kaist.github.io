@@ -55,7 +55,23 @@ Occasionally, we also make music, musical instruments, and instrument-making too
   <a href="{{ '/research/publications/' | relative_url }}" class="btn-learn-more" style="padding: 0.4rem 1.2rem;">View All Publications →</a>
 </div>
 
-<!-- (4) Collaboration Inquiry Guide -->
+<!-- (4) Research Demo, as flagged by `featured: true` in _demo/*.md -->
+{% assign featured_demos = site.demo | where: "featured", true | sort: "date" | reverse %}
+{% if featured_demos.size > 0 %}
+## Research Demo
+
+<div class="news-cards-container" style="display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 25px;">
+  {% for demo in featured_demos limit:3 %}
+    {% include demo-card.html demo=demo style="flex: 1; min-width: 280px; " %}
+  {% endfor %}
+</div>
+
+<div style="text-align: right; margin-bottom: 50px;">
+  <a href="{{ '/demo/' | relative_url }}" class="btn-learn-more" style="padding: 0.4rem 1.2rem;">View All Demos →</a>
+</div>
+{% endif %}
+
+<!-- (5) Collaboration Inquiry Guide -->
 ## Call for Collaborations
 
 New collaborations are always welcome. Connect with us to explore opportunities for joint research, instrument-making projects, and partnerships.
