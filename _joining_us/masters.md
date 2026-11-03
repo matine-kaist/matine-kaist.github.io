@@ -1,7 +1,7 @@
 ---
 layout: job
 title: "Master's Program Students"
-season: Spring 2027
+season: Fall 2027
 status: "2 funded openings (국비장학생)"
 permalink: /joining-us/masters/
 ---
@@ -54,7 +54,7 @@ We are seeking **master's students** from diverse backgrounds and majors to join
 
 ---
 
-- Please send the following to the [PI's email](https://jin-woo-lee.github.io) or to `{{ site.email }}`
+- Please send the following to the [PI's email](https://jin-woo-lee.github.io).
   1. A brief description of your research interests and why you want to join the lab.
   2. Your CV / résumé.
   3. Representative publications or a writing sample (if available).

@@ -1,7 +1,7 @@
 ---
 layout: job
 title: "Ph.D. Program Students"
-season: Spring 2027
+season: Fall 2027
 status: "1 funded opening (국비장학생)"
 permalink: /joining-us/phd/
 ---
@@ -54,7 +54,7 @@ We are looking for highly motivated **Ph.D. students** to join MATINE Lab in the
 
 ---
 
-- Please send the following to the [PI's email](https://jin-woo-lee.github.io) or to `{{ site.email }}`
+- Please send the following to the [PI's email](https://jin-woo-lee.github.io).
   1. A brief description of your research interests and why you want to join the lab.
   2. Your CV / résumé.
   3. Representative publications or a writing sample (if available).
