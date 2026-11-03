@@ -28,7 +28,7 @@ We are looking for self-motivated interns who are interested in (but not limited
 - **Musical Instrument Sound Simulation**
   - <u>Automated Playing Cover Performance</u> Simulator for String Instruments
   - Sound-matched Infill Patterning for [<u>3D-Printed Violins</u>](https://jnwoo.com/projects/2025-violin/)
-  - Designing Augmented <u>Tone-modulator</u> (e.g., [FatFinger](https://matine-kaist.github.io/joining-us/intern/), [Wolf tone eliminator](https://en.wikipedia.org/wiki/Wolf_tone))
+  - Designing Augmented <u>Tone-modulator</u> (e.g., [FatFinger](https://www.fender.com/products/fatfinger-guitar-sustain-enhancer), [Wolf tone eliminator](https://en.wikipedia.org/wiki/Wolf_tone))
 - **Novel Acoustic Actuator Design**
   - Developing [<u>Dielectric Elastomer</u> for Acoustic Actuation](https://jnwoo.com/projects/2026-slit/)
 
